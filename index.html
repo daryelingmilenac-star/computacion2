@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingeniería en Computación | UNHSJM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Cliente oficial de Supabase para conexión a BD online -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <!-- Barra superior institucional -->
+    <div class="top-bar">
+      <div class="container top-bar-content">
+        <span
+          >📞 2289 - 7740 &nbsp;|&nbsp; 📍 Managua, Costado Sur Colonia Rubén
+          Darío</span
+        >
+        <a href="https://eva.unhsjm.edu.ni" target="_blank" class="btn-eva"
+          >EVA UNHSJM 🎓</a
+        >
+      </div>
+    </div>
+
+    <!-- 2. MENÚ PRINCIPAL -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <div class="logo">
+          <div class="logo-icon">UNHSJM</div>
+          <div class="logo-text">
+            <strong>UNHSJM</strong>
+            <small>UNIVERSIDAD NACIONAL HÉROES DE SAN JOSÉ DE LAS MULAS</small>
+          </div>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="#inicio">Inicio</a>
+          <a href="#organigrama">Organigrama</a>
+          <a href="#carrera">La Carrera</a>
+          <a href="#modalidades">Modalidades</a>
+          <a href="#perfiles">Perfiles y Áreas</a>
+          <a href="#plan-estudio">Plan de Estudio</a>
+          <a href="#resenas">Reseñas</a>
+          <a href="#comentarios" class="nav-cta">Comentarios</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 1. CARRUSEL INFORMATIVO -->
+    <section id="inicio" class="carousel">
+      <div
+        class="carousel-slide active"
+        style="
+          background-image:
+            linear-gradient(rgba(10, 34, 89, 0.78), rgba(10, 34, 89, 0.78)),
+            url(&quot;https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80&quot;);
+        "
+      >
+        <div class="container carousel-caption">
+          <span class="badge">Oferta Académica UNHSJM</span>
+          <h1>Ingeniería en Computación</h1>
+          <p>
+            Forma parte de la nueva generación de ingenieros capaces de diseñar,
+            implementar y gestionar sistemas informáticos innovadores.
+          </p>
+          <a href="#plan-estudio" class="btn-primary"
+            >Ver Plan de Asignaturas</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="carousel-slide"
+        style="
+          background-image:
+            linear-gradient(rgba(10, 34, 89, 0.78), rgba(10, 34, 89, 0.78)),
+            url(&quot;https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=80&quot;);
+        "
+      >
+        <div class="container carousel-caption">
+          <span class="badge">Tecnología e Innovación</span>
+          <h1>Desarrollo de Software, IA y Redes</h1>
+          <p>
+            Domina algoritmos, programación móvil, bases de datos,
+            ciberseguridad e inteligencia artificial con enfoque práctico.
+          </p>
+          <a href="#perfiles" class="btn-primary">Explorar Áreas de Estudio</a>
+        </div>
+      </div>
+
+      <div
+        class="carousel-slide"
+        style="
+          background-image:
+            linear-gradient(rgba(10, 34, 89, 0.78), rgba(10, 34, 89, 0.78)),
+            url(&quot;https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80&quot;);
+        "
+      >
+        <div class="container carousel-caption">
+          <span class="badge">Duración: 4 ½ Años (10 Semestres)</span>
+          <h1>Prácticas de Familiarización y Profesionalización</h1>
+          <p>
+            Vinculación directa con sectores industriales y empresariales desde
+            el quinto semestre hasta tu culminación de estudios.
+          </p>
+          <a href="#comentarios" class="btn-primary">Déjanos tu Consulta</a>
+        </div>
+      </div>
+
+      <button class="carousel-btn prev" id="prevSlide" aria-label="Anterior">
+        &#10094;
+      </button>
+      <button class="carousel-btn next" id="nextSlide" aria-label="Siguiente">
+        &#10095;
+      </button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <!-- 3. ORGANIGRAMA DE LA UNIVERSIDAD -->
+    <section id="organigrama" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Organigrama de la Universidad</h2>
+        <p class="section-subtitle">
+          Estructura organizativa institucional de la Universidad Nacional
+          Héroes de San José de las Mulas (UNHSJM).
+        </p>
+
+        <div class="org-chart">
+          <div class="org-level">
+            <div class="org-box org-top">Consejo Universitario</div>
+          </div>
+          <div class="org-connector"></div>
+          <div class="org-level">
+            <div class="org-box org-rector">Rectoría</div>
+          </div>
+          <div class="org-connector"></div>
+          <div class="org-level org-grid-3">
+            <div class="org-box org-vicerrector">Vicerrectoría Académica</div>
+            <div class="org-box org-vicerrector">Secretaría General</div>
+            <div class="org-box org-vicerrector">
+              Vicerrectoría Administrativa y Financiera
+            </div>
+          </div>
+          <div class="org-connector"></div>
+          <div class="org-level org-grid-4">
+            <div class="org-box org-dept">
+              Dirección de Ciencias y Tecnología<br /><small
+                >(Carrera: Ingeniería en Computación)</small
+              >
+            </div>
+            <div class="org-box org-dept">
+              Dirección de Bienestar Estudiantil
+            </div>
+            <div class="org-box org-dept">
+              Dirección de Investigación y Posgrado
+            </div>
+            <div class="org-box org-dept">
+              Centros Universitarios Regionales (CUR)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DESCRIPCIÓN DE LA CARRERA -->
+    <section id="carrera" class="section">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80"
+            alt="Hardware y programación en Ingeniería en Computación"
+          />
+        </div>
+        <div class="about-text">
+          <h2 class="section-title left">Descripción de la Carrera</h2>
+          <p>
+            La carrera de <strong>Ingeniería en Computación</strong> en la
+            UNHSJM tiene como objetivo formar ingenieros en computación capaces
+            de diseñar, implementar y gestionar sistemas y aplicaciones
+            informáticas innovadoras, atendiendo a las necesidades tecnológicas
+            de diversos sectores industriales y empresariales.
+          </p>
+          <p>
+            A lo largo de la formación, el estudiante integra fundamentos
+            sólidos de matemáticas, física, electrónica y ciencias de la
+            computación con el desarrollo de software moderno, arquitectura de
+            computadoras, redes, bases de datos e inteligencia artificial.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MODALIDADES, DURACIÓN Y HORARIOS -->
+    <section id="modalidades" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Modalidades, Duración y Horarios</h2>
+        <p class="section-subtitle">
+          Información académica oficial de cursado para Ingeniería en
+          Computación.
+        </p>
+
+        <div class="cards-grid-3">
+          <div class="info-card">
+            <div class="card-icon">📅</div>
+            <h3>Duración de la Carrera</h3>
+            <p class="highlight-stat">4 ½ años</p>
+            <p>
+              Estructurada en <strong>10 semestres académicos</strong> con
+              asignaturas básicas, profesionalizantes, optativas y formas de
+              culminación de estudios.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="card-icon">🏫</div>
+            <h3>Modalidad Regular</h3>
+            <p class="highlight-stat">Presencial</p>
+            <p>
+              Clases teórico-prácticas en laboratorios de cómputo y electrónica,
+              apoyadas por el entorno virtual <strong>EVA UNHSJM</strong>.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="card-icon">🕒</div>
+            <h3>Turno y Horario</h3>
+            <p class="highlight-stat">Matutino</p>
+            <p>
+              Horario diurno de lunes a viernes (7:30 a.m. – 12:30 p.m.),
+              facilitando prácticas profesionales en el sector empresarial.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PERFILES DE SALIDA Y 7. ÁREAS DE ESTUDIO -->
+    <section id="perfiles" class="section">
+      <div class="container two-col-grid">
+        <div class="panel-box">
+          <h2 class="section-title left">Perfiles de Salida (Egresado)</h2>
+          <ul class="styled-list">
+            <li>
+              Dominio de lenguajes de programación y estructuras de datos.
+            </li>
+            <li>Capacidad para diseñar y optimizar algoritmos.</li>
+            <li>
+              Habilidades en el desarrollo de software y aplicaciones móviles.
+            </li>
+            <li>
+              Conocimientos en inteligencia artificial, redes neuronales y
+              aprendizaje automático.
+            </li>
+            <li>
+              Competencia en la gestión de bases de datos y sistemas operativos.
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel-box">
+          <h2 class="section-title left">Áreas de Estudio</h2>
+          <ul class="styled-list">
+            <li>Programación y Desarrollo de Software</li>
+            <li>Algoritmos y Estructuras de Datos</li>
+            <li>Inteligencia Artificial y Machine Learning</li>
+            <li>Redes de Computadoras y Ciberseguridad</li>
+            <li>Sistemas Operativos y Bases de Datos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PLAN DE ESTUDIO POR MODALIDAD -->
+    <section id="plan-estudio" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Plan de Estudio por Modalidad</h2>
+        <p class="section-subtitle">
+          Selecciona la modalidad para visualizar la distribución de asignaturas
+          por semestre.
+        </p>
+
+        <div class="modality-tabs">
+          <button class="tab-btn active" data-modality="regular">
+            Modalidad Regular (Matutino - 10 Semestres)
+          </button>
+          <button class="tab-btn" data-modality="encuentro">
+            Modalidad por Encuentro (Sabatino - 10 Semestres)
+          </button>
+        </div>
+
+        <p class="modality-note" id="modalityNote">
+          <strong>Modalidad Regular (Turno Matutino):</strong> Cursado
+          presencial de lunes a viernes durante 4 ½ años (10 semestres).
+        </p>
+
+        <div class="semesters-grid" id="semestersGrid">
+          <!-- Se renderiza dinámicamente desde app.js con las 57 asignaturas exactas -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. RESEÑAS -->
+    <section id="resenas" class="section">
+      <div class="container">
+        <h2 class="section-title">Reseñas de Estudiantes y Egresados</h2>
+        <p class="section-subtitle">
+          Experiencias de nuestra comunidad universitaria en Ingeniería en
+          Computación.
+        </p>
+
+        <div class="cards-grid-3">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "La formación en algoritmos, bases de datos y programación web me
+              permitió conseguir mi primera pasantía en desarrollo de software
+              antes de egresar."
+            </p>
+            <div class="reviewer">
+              <strong>Carlos Mendoza</strong>
+              <span>Estudiante de IX Semestre</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "Las prácticas de familiarización y profesionalización desde
+              quinto semestre conectan directamente lo que ves en clase con
+              proyectos reales de empresas."
+            </p>
+            <div class="reviewer">
+              <strong>María Fernanda López</strong>
+              <span>Egresada de Ingeniería en Computación</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              "El acompañamiento docente y el enfoque en tecnologías actuales
+              como inteligencia artificial, móviles y redes te preparan para
+              competir en el mercado laboral."
+            </p>
+            <div class="reviewer">
+              <strong>José Alejandro Ruiz</strong>
+              <span>Estudiante de X Semestre</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FORMULARIO DE COMENTARIOS CON CONEXIÓN A BD ONLINE -->
+    <section id="comentarios" class="section bg-light">
+      <div class="container comments-layout">
+        <div class="comment-form-box">
+          <h2 class="section-title left">Formulario de Comentarios</h2>
+          <p>
+            Envía tus dudas, opiniones o sugerencias sobre la carrera. Los
+            comentarios se almacenan en nuestra base de datos en la nube.
+          </p>
+
+          <form id="commentForm">
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input
+                type="text"
+                id="nombre"
+                required
+                placeholder="Ej. Daryeling Cardoza"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo electrónico *</label>
+              <input
+                type="email"
+                id="correo"
+                required
+                placeholder="ejemplo@correo.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="perfil">Perfil</label>
+              <select id="perfil">
+                <option value="Aspirante">Aspirante / Nuevo Ingreso</option>
+                <option value="Estudiante UNHSJM">Estudiante UNHSJM</option>
+                <option value="Egresado">Egresado</option>
+                <option value="Docente / Visitante">Docente / Visitante</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Comentario *</label>
+              <textarea
+                id="mensaje"
+                rows="4"
+                required
+                placeholder="Escribe aquí tu comentario o consulta..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary full-width" id="btnSubmit">
+              Guardar Comentario en BD
+            </button>
+            <p id="formStatus" class="form-status"></p>
+          </form>
+        </div>
+
+        <div class="comments-list-box">
+          <h3>Comentarios Recientes (Base de Datos Online)</h3>
+          <div id="commentsList" class="comments-feed">
+            <p class="loading-text">
+              Cargando comentarios desde la base de datos...
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-content">
+        <div>
+          <h4>UNHSJM - Ingeniería en Computación</h4>
+          <p>Managua, Costado Sur Colonia Rubén Darío | Tel: 2289 - 7740</p>
+        </div>
+        <p class="copyright">
+          © 2026 Universidad Nacional Héroes de San José de las Mulas. Proyecto
+          Académico PW_2S26.
+        </p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
